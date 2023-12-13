@@ -10,6 +10,8 @@ import tkinter
 tkinter._test()
 ```
 
+## Label
+
 - To add a label with tkinter use the ttk.Label and provide appropriate options
 - For label, we can pass text and styling options.
 - the `.pack()` function at the end is used to build the label on to the root element.
@@ -25,3 +27,31 @@ ttk.Label(root, text="This is an example app", padding=(30, 10)).pack()
 
 root.mainloop()
 ```
+
+## Buttons
+
+```python
+import tkinter as tk
+from tkinter import ttk
+
+
+def greet():
+    print("Example project")
+
+
+root = tk.Tk()
+greet_button = ttk.Button(text="greet", command=greet, padding=(20, 10))
+greet_button.pack(side="left", fill="x", expand=True)
+
+quit_button = ttk.Button(text="quit", command=root.destroy, padding=(20, 10))
+quit_button.pack(side="left", fill="x")
+
+root.mainloop()
+```
+
+- Use `ttk.Button` for adding a button
+- With `command` option pass in a function which will be triggered on clicking button.
+- Styling can be done.
+- Use `root.destroy` as for command to quit the root window.
+- While applaying pack, side on which the control should be stuck can be passed with `side` option.
+- Use `fill` option for occupying available space
